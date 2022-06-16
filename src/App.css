@@ -1,38 +1,142 @@
-.App {
-  text-align: center;
+*,
+::after,
+::before {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+
+  --black: #222;
+  --white: #fff;
+  --red-light: #f8d7da;
+  --red-dark: #842029;
+  --green-light: #d1e7dd;
+  --green-dark: #0f5132;
+  --orang: #ea9516;
+  --gray: #968d8f;
+  --gray-mid:#d7c9cc;
+  --gray-light:#eee9ee;
+  --blue:#3a1eee;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  font-weight: 400;
+  text-transform: capitalize;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&family=Montserrat&family=Kaushan+Script&display=swap');
+
+html {
+  font-size: 100%;
+} /*16px*/
+
+body {
+  background-color: var(--white);
+}
+
+.page {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.page-title {
+  font-size: 2rem;
+  width: 90vw;
+  margin-top: 1rem;
+}
+
+.beers-list {
+  width: 90vw;
+  display: grid;
+  margin-top: 1.5rem;
+  gap: 1.2rem;
+}
+
+.beer-item {
+  border-radius: 5px;
+  box-shadow: 0 5px 10px 5px rgba(0,0,0,0.1);
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem  2rem;
+}
+
+.beer-item:hover{
+  cursor: pointer;
+  background-color: var(--gray-light);
+}
+
+.item-pic img {
+  cursor: pointer;
+  height: 6rem;
+}
+
+.item-details {
+  overflow:auto;
+  font-size: 0.7rem; 
+  margin-left: 2rem;
+}
+
+.item-details > * {
+  margin-bottom: 0.2rem;
+}
+
+.item-details h3 {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.item-details h4 {
+  color: var(--orang);
+  font-weight: 600;
+}
+
+.item-details span {
+  margin: 0;
+}
+
+.read-more-less {
+  color: var(--gray-mid);
+  text-transform: capitalize;
+}
+
+.load {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--blue); 
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.load-more {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (min-width: 768px){
+  .beers-list{
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.2rem
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (min-width: 500px){
+  .item-details h3 {
+    font-size: 1.3rem;
   }
 }
